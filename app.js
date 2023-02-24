@@ -6,13 +6,14 @@ const mongoose = require("mongoose");
 const _ = require("lodash");
 
 const app = express();
+const PORT = process.env.PORT;
 
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://yash2406:Yash240602@cluster0.hjhfadq.mongodb.net/todolistDB", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 
 const itemsSchema = {
   name: String
@@ -133,7 +134,7 @@ app.get("/about", function (req, res) {
   res.render("about");
 });
 
-app.listen(3000, function () {
+app.listen(PORT, function () {
   console.log("Server started on port 3000");
 });
 
