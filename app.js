@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const _ = require("lodash");
 
 const app = express();
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 
@@ -134,7 +134,7 @@ app.get("/about", function (req, res) {
   res.render("about");
 });
 
-app.listen(port, function () {
+app.listen(3000, function () {
   console.log("Server started successfully!");
 });
 
