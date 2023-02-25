@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -13,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://yash2406:<password>@cluster0.hjhfadq.mongodb.net/?retryWrites=true&w=majority", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://yash2406:Yash240602@cluster0.hjhfadq.mongodb.net/?retryWrites=true&w=majority", { useNewUrlParser: true });
 
 const itemsSchema = {
   name: String
